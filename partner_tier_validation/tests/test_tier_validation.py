@@ -2,11 +2,13 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl.html).
 
 from odoo.exceptions import ValidationError
-from odoo.tests import common, tagged
+from odoo.tests import tagged
+
+from odoo.addons.base.tests.common import BaseCommon
 
 
 @tagged("-at_install", "post_install")
-class TestPartnerTierValidation(common.TransactionCase):
+class TestPartnerTierValidation(BaseCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -20,7 +22,7 @@ class TestPartnerTierValidation(common.TransactionCase):
                 "name": "Employee",
                 "login": "empl1",
                 "email": "empl1@example.com",
-                "groups_id": (group_user | group_contacts).ids,
+                "group_ids": (group_user | group_contacts).ids,
             }
         )
         cls.user_approver = User.create(
@@ -28,7 +30,7 @@ class TestPartnerTierValidation(common.TransactionCase):
                 "name": "Approver",
                 "login": "aprov1",
                 "email": "approv1@example.com",
-                "groups_id": (group_user | group_contacts | group_approver).ids,
+                "group_ids": (group_user | group_contacts | group_approver).ids,
             }
         )
 
