@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 Optitoo (Kolmio S. A.) (<http://www.optitoo.lu>)
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+<odoo>
+  <record model="mail.message.subtype" forcecreate="1" id="project_tier_validation_requested">
+    <field name="name">Tier Validation Requested</field>
+    <field name="res_model">project.project</field>
+    <field name="internal">True</field>
+  </record>
+  <record model="mail.message.subtype" forcecreate="1" id="project_tier_validation_accepted">
+    <field name="name">Tier Validation Accepted</field>
+    <field name="res_model">project.project</field>
+    <field name="internal">True</field>
+  </record>
+  <record model="mail.message.subtype" forcecreate="1" id="project_tier_validation_rejected">
+    <field name="name">Tier Validation Rejected</field>
+    <field name="res_model">project.project</field>
+    <field name="internal">True</field>
+  </record>
+</odoo>
