@@ -5,9 +5,9 @@
   <record id="view_project_filter_tier_validation" model="ir.ui.view">
     <field name="name">project.project.search.tier.validation</field>
     <field name="model">project.project</field>
-    <field name="inherit_id" ref="project.view_project" />
+    <field name="inherit_id" ref="project.view_project_project_filter" />
     <field name="arch" type="xml">
-      <filter name="my_projects" position="after">
+      <filter name="own_projects" position="after">
         <filter name="needs_review" string="Needs my Review"
           domain="[('reviewer_ids', 'in', uid),
                    ('last_update_status', 'not in', ['on_track', 'done'])]"
